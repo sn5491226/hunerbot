@@ -155,7 +155,7 @@ async def start_web_server():
     app.router.add_post("/lua_event", handle_lua_event)
     runner = web.AppRunner(app)
     await runner.setup()
-    site = web.TCPSite(runner, "0.0.0.0", 8080)
+    site = web.TCPSite(runner, "127.0.0.1", 8080)
     await site.start()
     print("🌐 API для Lua-скрипта запущено на порту 8080!")
 
